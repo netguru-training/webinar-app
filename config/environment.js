@@ -13,6 +13,11 @@ module.exports = function(environment) {
     firebase: 'https://webinar-app.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
+    contentSecurityPolicy: {
+      'connect-src': "'self' wss://*.firebaseio.com https://auth.firebase.com",
+      'frame-src': "'self' https://*.firebaseio.com",
+      'script-src': "'self' 'unsafe-eval' https://*.firebaseio.com"
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
