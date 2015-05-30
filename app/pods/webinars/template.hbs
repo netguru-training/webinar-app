@@ -7,8 +7,8 @@
         </div>
       {{/link-to}}
     </li>
-    {{#each webinar in model}}
-      {{webinars/components/webinar-row webinar=webinar}}
+    {{#each webinar in proxyWebinars}}
+      {{webinars/components/webinar-row webinar=webinar toggleSub="toggleSubscription"}}
     {{/each}}
   </ul>
 </div>
