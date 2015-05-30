@@ -1,7 +1,7 @@
 `import Ember from 'ember'`
 
 WebinarsController = Ember.Controller.extend
-  proxyWebinars: Ember.computed "model.[]", ->
+  proxyWebinars: Ember.computed "model.[]", "subscriptions.[]", "subscriptionsLoaded", ->
     @get("model").map (item) =>
       subscribed = @get("session.currentUser").then( (users) =>
         currentUser = users.toArray()[0]
