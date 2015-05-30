@@ -19,5 +19,6 @@ Router.map ->
   @route "categories", ->
     @route "category", path: ":category_id", ->
       @route "webinars"
+  @route 'webinars/new'
 
 `export default Router;`
