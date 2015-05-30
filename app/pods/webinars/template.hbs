@@ -1,5 +1,12 @@
 <div class="container">
   <ul class="list-group col-xs-12">
+    <li class="list-group-item">
+      {{#link-to "webinars/new"}}
+        <div class="btn btn-default">
+          Create new
+        </div>
+      {{/link-to}}
+    </li>
     {{#each webinar in model}}
       {{webinars/components/webinar-row webinar=webinar}}
     {{/each}}
