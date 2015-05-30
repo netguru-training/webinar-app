@@ -1,3 +1,10 @@
-{{#link-to 'webinar.show' webinar}}
-  {{webinar.name}}
+{{#link-to 'webinar.show' webinar.content}}
+  {{webinar.content.name}}
 {{/link-to}}
+<div class="pull-right">
+  {{#if webinar.subscribed}}
+    <button class="btn btn-xs btn-danger" {{action 'toggleSub'}}>Unsubscribe</button>
+  {{else}}
+    <button class="btn btn-xs btn-success" {{action 'toggleSub'}}>Subscribe</button>
+  {{/if}}
+</div>
