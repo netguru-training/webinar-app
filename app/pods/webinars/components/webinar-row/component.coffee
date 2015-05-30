@@ -1,6 +1,6 @@
 `import Ember from 'ember';`
 
 WebinarRow = Ember.Component.extend
-  tagName: 'tr'
+  tagName: 'li'
 
 `export default WebinarRow`
