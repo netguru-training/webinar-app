@@ -5,7 +5,11 @@ module.exports = function(environment) {
     modulePrefix: 'webinar-app',
     podModulePrefix: 'webinar-app/pods',
     environment: environment,
-    contentSecurityPolicy: { 'connect-src': "'self' wss://*.firebaseio.com" },
+    contentSecurityPolicy: {
+      'connect-src': "'self' wss://*.firebaseio.com",
+      'frame-src': "'self' https://*.firebaseio.com",
+      'script-src': "'self' 'unsafe-eval' https://*.firebaseio.com"
+    },
     firebase: 'https://webinar-app.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
