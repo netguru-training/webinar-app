@@ -5,6 +5,8 @@ module.exports = function(environment) {
     modulePrefix: 'webinar-app',
     podModulePrefix: 'webinar-app/pods',
     environment: environment,
+    contentSecurityPolicy: { 'connect-src': "'self' wss://*.firebaseio.com" },
+    firebase: 'https://webinar-app.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
