@@ -14,7 +14,8 @@ SignUpController = Ember.Controller.extend
           if error
             console.log 'Error creating user:', error
           else
-            @store.createRecord('user', { firebaseId: userData.uid }).save().then (user) =>
+            id = userData.uid.split(":")[1]
+            @store.createRecord('user', { firebaseId: id }).save().then (user) =>
               @login()
         return
 
