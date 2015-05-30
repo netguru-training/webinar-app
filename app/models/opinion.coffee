@@ -3,7 +3,7 @@
 Opinion = DS.Model.extend
   rating: DS.attr 'number'
   content: DS.attr 'string'
-  user: DS.belongsTo 'user'
-  webinar: DS.belongsTo 'webinar'
+  user: DS.belongsTo 'user', async: true
+  webinar: DS.belongsTo 'webinar', async: true
 
 `export default Opinion`

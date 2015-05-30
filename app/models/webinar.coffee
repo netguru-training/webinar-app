@@ -5,8 +5,8 @@ Webinar = DS.Model.extend
   description: DS.attr 'string'
   state: DS.attr 'string',
     defaultValue: 'new'
-  user: DS.belongsTo 'user'
-  category: DS.belongsTo 'category'
-  subscriptions: DS.hasMany 'subscriptions'
+  user: DS.belongsTo 'user', async: true
+  category: DS.belongsTo 'category', async: true
+  subscriptions: DS.hasMany 'subscriptions', async: true
 
 `export default Webinar`
