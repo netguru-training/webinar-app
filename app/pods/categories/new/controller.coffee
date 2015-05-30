@@ -3,7 +3,7 @@
 CategoryController = Ember.Controller.extend
   actions:
     save: ->
-      @get("model").save().then (category) =>
-        @transitionToRoute("categories.show", category)
+      @get("model").save().then =>
+        @transitionToRoute("categories.index")
 
 `export default CategoryController`
