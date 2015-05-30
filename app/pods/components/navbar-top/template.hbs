@@ -9,7 +9,12 @@
           <li>{{#link-to "categories"}}Categories{{/link-to}}</li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li>{{#link-to "login"}}Login{{/link-to}}</li>
+          {{#if session.isAuthenticated}}
+            <li><a href="#"{{action 'invalidateSession'}}>Logout</a></li>
+          {{else}}
+            <li>{{#link-to 'login'}}Login{{/link-to}}</li>
+            <li>{{#link-to 'sign-up'}}Sign Up{{/link-to}}</li>
+          {{/if}}
         </ul>
       </div>
     </div>
