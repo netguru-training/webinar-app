@@ -16,8 +16,8 @@ Router.map ->
     @route "opinions"
     @route "subscriptions"
 
-  @route "categories"
-  @route "categorie", path: ":category_id", ->
-    @route "webinars"
+  @route "categories", ->
+    @route "category", path: ":category_id", ->
+      @route "webinars"
 
 `export default Router;`
