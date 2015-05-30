@@ -8,7 +8,6 @@ module.exports = function(environment) {
     firebase: 'https://webinar-app.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
-    session: 'session:withCurrentUser',
     contentSecurityPolicy: {
       'connect-src': "'self' wss://*.firebaseio.com https://auth.firebase.com",
       'frame-src': "'self' https://*.firebaseio.com",
@@ -34,7 +33,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = false;
     ENV['simple-auth'] = {
-      routeAfterAuthentication: "webinars"
+      routeAfterAuthentication: "webinars",
+      session: 'session:withCurrentUser'
     };
   }
 
