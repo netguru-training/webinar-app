@@ -5,7 +5,12 @@ WebinarsNewRoute = Ember.Route.extend
     @store.createRecord 'webinar'
   actions:
     save: ->
-      @controller.get('model').save().then =>
+      model = @controller.get('model')
+      @get('session.currentUser').then( (users) =>
+        user = users.toArray()[0]
+        model.set('user', user)
+        model.save()
+      ).then =>
         @transitionTo 'webinars'
       return
 
