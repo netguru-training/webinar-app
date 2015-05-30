@@ -1,9 +1,5 @@
-<ul>
+<table>
   {{#each webinar in model}}
-    <li>
-      {{#link-to 'webinar.show' webinar}}
-        {{webinar.name}}
-      {{/link-to}}
-    </li>
+    {{webinars/components/webinar-row webinar=webinar}}
   {{/each}}
-</ul>
+</table>
