@@ -2,6 +2,23 @@
 `import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin'`
 
 WebinarsRoute = Ember.Route.extend AuthenticatedRouteMixin,
+  actions:
+    toggleSubscription: (webinar, subscribed) ->
+      if subscribed
+        @controller.set("subscriptionsLoaded", false)
+        subs = @controller.get("currentSubscriptions").filterBy("webinar.id", webinar.get("id"))
+        destroyPromises = subs.map (sub) =>
+          sub.destroyRecord()
+        Ember.RSVP.all(destroyPromises).then =>
+          @controller.set("subscriptionsLoaded", true)
+      else
+        @store.createRecord("subscription",
+          webinar: webinar
+          user: @controller.get("currentUser")
+        ).save().then =>
+          @controller.set("subscriptionsLoaded", true)
+      return
+
   model: ->
     webinarData =
       webinars: @store.findAll 'webinar'
