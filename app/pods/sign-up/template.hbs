@@ -1,0 +1,22 @@
+<form {{action "signUp" on="submit"}}>
+  <label>Email:
+    {{input value=email}}
+  </label>
+
+  <br/>
+
+  <label>Password:
+    {{input type="password" value=password}}
+  </label>
+
+  <br/>
+
+  <label>Confirm Password:
+    {{input type="password" value=confirmedPassword}}
+  </label>
+
+  <br/>
+
+  <input type="submit" value="Register"/>
+  <button {{action "cancel"}}>Cancel</button>
+</form>
