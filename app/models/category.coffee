@@ -2,6 +2,6 @@
 
 Category = DS.Model.extend
   name: DS.attr 'string'
-  webinars: DS.hasMany 'webinars', async: true
+  webinars: DS.hasMany 'webinar', async: true
 
 `export default Category`
