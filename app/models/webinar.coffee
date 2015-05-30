@@ -8,5 +8,6 @@ Webinar = DS.Model.extend
   user: DS.belongsTo 'user', async: true
   category: DS.hasMany 'category', async: true
   subscriptions: DS.hasMany 'subscriptions', async: true
+  youtubeUrl: DS.attr 'string'
 
 `export default Webinar`
