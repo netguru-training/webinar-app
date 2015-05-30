@@ -2,7 +2,7 @@
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
-        {{#link-to "application" class="navbar-brand"}}Webinar App{{/link-to}}
+        {{#link-to "webinars" class="navbar-brand"}}Webinar App{{/link-to}}
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
@@ -10,7 +10,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           {{#if session.isAuthenticated}}
-            <li><a href="#"{{action 'invalidateSession'}}>Logout</a></li>
+            <li><a href="#"{{action 'logout'}}>Logout</a></li>
           {{else}}
             <li>{{#link-to 'login'}}Login{{/link-to}}</li>
             <li>{{#link-to 'sign-up'}}Sign Up{{/link-to}}</li>
