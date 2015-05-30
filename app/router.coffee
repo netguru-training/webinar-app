@@ -17,6 +17,9 @@ Router.map ->
     @route "subscriptions"
 
   @route "categories", ->
+    @route "new"
+    @route "show", path: ":category_id/show"
+
     @route "category", path: ":category_id", ->
       @route "webinars"
   @route 'webinars/new'
