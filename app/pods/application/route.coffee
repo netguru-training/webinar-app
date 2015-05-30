@@ -6,6 +6,10 @@ ApplicationRoute = Ember.Route.extend ApplicationRouteMixin,
     sessionInvalidationSucceeded: ->
       @transitionTo("login")
       return
+    logout: ->
+      @get('session').invalidate().then =>
+        @transitionTo 'login'
+      return
 
 `export default ApplicationRoute`
 
