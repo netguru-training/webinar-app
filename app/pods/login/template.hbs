@@ -1,15 +1,13 @@
-<form {{action "login" on="submit"}}>
-  <label>
-    Email: {{input value=email}}
-  </label>
+<form>
+  <div class="form-group">
+    <label>Email:</label>
+    {{input value=email class="form-control" placeholder="Your email account"}}
+  </div>
 
-  <br/>
+  <div class="form-group">
+    <label>Password:</label>
+    {{input type="password" value=password class="form-control" placeholder="Password"}}
+  </div>
 
-  <label>
-    Password: {{input type="password" value=password}}
-  </label>
-
-  <br/>
-
-  <input type="submit" value="Login"/>
+  <input type="submit" {{action "login"}} class="btn btn-default" value="Login"/>
 </form>

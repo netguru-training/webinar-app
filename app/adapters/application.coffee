@@ -5,5 +5,4 @@
 Adapter = FirebaseAdapter.extend
   firebase: new Firebase(config.firebase)
 
-
 `export default Adapter;`
