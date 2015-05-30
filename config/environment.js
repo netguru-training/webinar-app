@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'webinar-app',
+    podModulePrefix: 'bashguru/pods',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
