@@ -10,13 +10,24 @@ SignUpController = Ember.Controller.extend
         ref.createUser {
           email: @get('email')
           password: @get('password')
-        }, (error, userData) ->
+        }, (error, userData) =>
           if error
             console.log 'Error creating user:', error
           else
-            console.log 'Successfully created user account with uid:', userData.uid
+            @store.createRecord('user', { firebaseId: userData.uid }).save().then (user) =>
+              @login()
+        return
 
     cancel: ->
-      @transitionTo('application')
+      @transitionToRoute('login')
+
+  login: ->
+    @get('session').authenticate('authenticator:firebase',
+      'email': @get('email')
+      'password': @get('password')
+    ).then (result) =>
+      @transitionToRoute 'webinars'
+    return
+
 
 `export default SignUpController`
