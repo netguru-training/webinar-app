@@ -2,10 +2,12 @@
 
 WebinarsController = Ember.Controller.extend
   proxyWebinars: Ember.computed "model.[]", ->
-    @get("model").map (item) =>
-      subscribed = @get('currentProperties').filterBy('webinar.id', item.get('id'))
+    currentSubscriptions = @get('currentSubscriptions')
+    webinars = @get('model')
+    webinars.map (webinar) ->
+      subscribed = currentSubscriptions.filterBy('webinar.id', webinar.get('id')).length
       Ember.Object.create
-        content: item
+        content: webinar
         subscribed: subscribed
 
 `export default WebinarsController`
