@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-6">
-      {{ webinars/components/webinar-form save="save" model=model }}
+      {{webinars/components/webinar-form save="save" model=model categories=categories}}
     </div>
     <div class="col-xs-6">
       {{#if model.description}}
@@ -13,4 +13,3 @@
     </div>
   </div>
 </div>
-

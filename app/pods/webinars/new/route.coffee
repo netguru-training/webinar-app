@@ -2,7 +2,10 @@
 
 WebinarsNewRoute = Ember.Route.extend
   model: ->
-    @store.createRecord 'webinar'
+    Ember.RSVP.hash
+      model: @store.createRecord('webinar')
+      categories: @store.findAll('category')
+
   actions:
     save: ->
       model = @controller.get('model')
@@ -13,5 +16,9 @@ WebinarsNewRoute = Ember.Route.extend
       ).then =>
         @transitionTo 'webinars'
       return
+
+  setupController: (controller, model) ->
+    @_super(controller, model)
+    controller.set('categories', model.categories)
 
 `export default WebinarsNewRoute`
