@@ -9,7 +9,9 @@
       <span class="badge">{{model.state}}</span>
     </div>
     <div class="col-xs-11">
-      Subscribed: {{model.usersEmailList}}
+      {{#each category in model.categories}}
+        <span class="badge">{{category.name}}</span>
+      {{/each}}
     </div>
   </div>
   <div class="row">
