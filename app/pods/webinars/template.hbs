@@ -1,6 +1,6 @@
 <div class="container">
   <ul class="list-group col-xs-12">
-    <li class="list-group-item">
+    <li class="list-group-item-dupa list-group-item">
       {{#link-to "webinars/new"}}
         <div class="btn btn-default">
           Create new
@@ -8,7 +8,7 @@
       {{/link-to}}
     </li>
     {{#each webinar in proxyWebinars}}
-      {{webinars/components/webinar-row webinar=webinar.content toggle="toggle" subscribed=webinar.subscribed}}
+      {{webinars/components/webinar-row webinar=webinar toggle="toggle"}}
     {{/each}}
   </ul>
 </div>
