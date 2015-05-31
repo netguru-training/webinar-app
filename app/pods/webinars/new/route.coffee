@@ -18,7 +18,7 @@ WebinarsNewRoute = Ember.Route.extend
       return
 
   setupController: (controller, model) ->
-    @_super(controller, model)
+    @_super(controller, model.model)
     controller.set('categories', model.categories)
 
 `export default WebinarsNewRoute`
