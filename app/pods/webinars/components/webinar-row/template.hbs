@@ -2,7 +2,7 @@
   {{webinar.content.name}}
 {{/link-to}}
 {{#if webinar.subscribed}}
-  <button type="button" class="btn btn-danger btn-subscribe">Leave</button>
+  <button type="button" class="btn btn-danger btn-subscribe" {{action "toggle"}}>Leave</button>
 {{else}}
-  <button type="button" class="btn btn-success btn-subscribe">Join</button>
+  <button type="button" class="btn btn-success btn-subscribe" {{action "toggle"}}>Join</button>
 {{/if}}

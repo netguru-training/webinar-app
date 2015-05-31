@@ -20,5 +20,16 @@ WebinarsRoute = Ember.Route.extend AuthenticatedRouteMixin,
         currentSubscriptions: subs
         subscriptionsLoaded: true
 
+  actions:
+    toggleSubscription: (webinar, subscribed) ->
+      if subscribed
+        console.log(" ")
+      else
+        @store.createRecord('subscription',
+          webinar: webinar,
+          user: @controller.get('currentUser')
+        ).save().then =>
+      return
+
 `export default WebinarsRoute`
 
