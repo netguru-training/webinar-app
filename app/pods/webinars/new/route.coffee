@@ -7,11 +7,13 @@ WebinarsNewRoute = Ember.Route.extend
       categories: @store.findAll('category')
 
   actions:
-    save: ->
+    save: (choosenCategories) ->
       model = @controller.get('model')
+
       @get('session.currentUser').then( (users) =>
         user = users.toArray()[0]
         model.set('user', user)
+        model.get('categories').pushObjects(choosenCategories)
         model.save()
       ).then =>
         @transitionTo 'webinars'

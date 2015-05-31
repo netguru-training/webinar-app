@@ -4,6 +4,6 @@ WebinarForm = Ember.Component.extend
   statuses: ["new", "rejected", "approved", "finished"]
   actions:
     save: ->
-      @sendAction 'save'
+      @sendAction 'save', @get('choosenCategories')
 
 `export default WebinarForm`
