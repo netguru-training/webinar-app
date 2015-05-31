@@ -14,15 +14,18 @@
     {{view "select" content=statuses selection=model.status class="form-control"}}
   </div>
 
-  {{select-2
-    content=categories
-    value=choosenCategories
-    multiple=true
-    optionValuePath="id"
-    optionLabelPath="name"
-    placeholder="Choose categories"
-    allowClear=true
-  }}
-
+  <div class="form-group">
+    <label>Categories:</label>
+    {{select-2
+      content=categories
+      value=choosenCategories
+      multiple=true
+      optionValuePath="id"
+      optionLabelPath="name"
+      placeholder="Choose categories"
+      allowClear=true
+    }}
+  </div>
+  <hr/>
   <input type="submit" {{action "save"}} class="btn btn-default" value="Create"/>
 </form>
