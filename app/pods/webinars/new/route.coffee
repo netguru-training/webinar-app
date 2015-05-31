@@ -21,4 +21,8 @@ WebinarsNewRoute = Ember.Route.extend
     @_super(controller, model.model)
     controller.set('categories', model.categories)
 
+  deactivate: ->
+    model = @controller.get('model')
+    model.destroyRecord() if model.get('isNew')
+
 `export default WebinarsNewRoute`
