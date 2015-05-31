@@ -1,1 +1,16 @@
-{{ webinars/components/webinar-form save="save" model=model }}
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      {{ webinars/components/webinar-form save="save" model=model }}
+    </div>
+    <div class="col-xs-6">
+      {{#if model.description}}
+        <p>Description preview:</p>
+        <div class="markdown">
+          {{format-markdown model.description}}
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</div>
+
