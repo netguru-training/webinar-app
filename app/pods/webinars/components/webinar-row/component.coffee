@@ -2,6 +2,6 @@
 
 WebinarRow = Ember.Component.extend
   tagName: 'li'
-  classNames: ['list-group-item', 'list-group-item-dupa']
+  classNames: ['list-group-item', 'styled-item']
 
 `export default WebinarRow`
